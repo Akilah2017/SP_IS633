@@ -1,0 +1,41 @@
+h1 {
+    font-family: cursive;
+    text-align: center;
+    }
+
+h2 {
+    font-family: sans-serif;
+    text-align:  center;
+    }
+
+#section1 {
+    visibility: hidden;
+    position: absolute;
+    height: 590px;
+    width: 600px;
+    overflow: auto;
+    background-color: #CCFFFF;
+    }
+    
+#section2 {
+    visibility: hidden;
+    position: absolute;
+    height: 590px;
+    width: 600px;
+    overflow: auto;
+    background-color: #99FFFF;
+    }
+    
+img {
+    display: block;
+    margin: auto;
+    width: 60%;   
+}
+
+footer
+{
+    position: absolute;
+    width:600px;
+    top:590px;
+
+}
