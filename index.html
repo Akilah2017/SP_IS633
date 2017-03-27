@@ -2,37 +2,50 @@
     
     <html>
         <head>
-            <title>Module 1 Example</title>
+            <title>Module 2 Assignment</title>
             
-            <link rel="stylesheet" type="text/css" href="styles/assignment1.css" />
-            <script src="js/assignment1.js">
+            <link rel="stylesheet" type="text/css" href="styles/assignment2.css" />
+            <script src="js/assignment2.js">
                 
             </script>
         </head>
         
-        <body onload="RefreshMenu()">
-            <header><h1>Module 1 Example</h1><hr></header>
-            
-            <center><section id="title">
-                
-                <select onchange="MenuChoice(value)" id="menu">
-                    <option value="None">Please select an option.</option>
-                    <option value="Section 1">Show Area 1</option>
-                    <option value="Section 2">Show Area 2</option>
-                </select>
-            </section></center>
+        <body onload=RefreshMenu()>
+            <section id="title">
+                <h1>Module 2 Assignment</h1>
             <hr>
-            <section id="section1">
-                <h2>Spring in Sweden</h2>
-                <br>
-                <img src="images/swedishspring.jpg">
+            <select onchange="MenuChoice(value)" id="menu">
+                <option value="None">Please select an option.</option>
+                <option value="customerlist">List of Customers</option>
+                <option value="orderhistory">Customer Order History</option>
+                <option value="about">About</option>
+            </select>
             </section>
-            <section id="section2">
-                <h2>Spring in Alabama</h2>
-                <br>
-                <img src="images/alabamaspring.jpg">
+            <hr>
+            
+            <section id="customerlist">
+                <h2>Customer List</h2>
+                <hr>
+                <p id="listcustomers">Customer List</p>
             </section>
             
-            <footer><hr><h2>Akilah Fincher <br> <a href="mailto:akilah13@uab.edu">akilah13@uab.edu</h2></footer>
-            </body>
+            <section id="orderhistory">
+                <h2>Customer Order History</h2>
+                <hr>
+                <p id="customerorders"><label>Enter the Customer ID:</label>
+                <input type="text" id="customerid"></p>
+                <br>
+                <button onclick="GetOrders()" id="orders">Find Customer Orders</button>
+                <button onclick='MenuChoice("customerlist")'>Back to Customer List</button>
+            </section>
+            
+            <section id="about">
+                <h2>About</h2>
+                <br>
+                <center><p> 
+                   This app allows you to view items a customers has purchased. Simply select a Customer Name from the Customer List or enter their ID in the input field and their order history will display in the following screen.<br>
+                   Created by: Akilah Fincher</p></center>
+            </section>
+            
+        </body>
     </html>

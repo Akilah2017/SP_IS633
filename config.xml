@@ -7,8 +7,8 @@
         version     = "0.0.1" >
     
     <!-- versionCode is optional and Android only -->
-    <name>Assignment 1</name>
-    <description>        Module 1 Assignment    </description>
+    <name>Assignment 2</name>
+    <description>        Module 2 Assignment    </description>
     <author>        Akilah Fincher     </author>
     <preference name="phonegap-version" value="cli-6.5.0" />
     <plugin name="cordova-plugin-whitelist" source="npm" />

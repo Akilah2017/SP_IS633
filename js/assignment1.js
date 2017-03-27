@@ -25,4 +25,3 @@ function RefreshMenu()
     document.getElementById("menu").selectedIndex = "0";
     MenuChoice("None");
 }
-   
