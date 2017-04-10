@@ -23,8 +23,26 @@ h2 {
     height: 75%;
     width: 600px;
     overflow: scroll;
-    background-color: #99FFFF;
+    background-color: #6F749A;
     }
+    
+#currentorders{
+    visibility: hidden;
+    position: absolute;
+    height: 75%;
+    width: 600px;
+    overflow: scroll;
+    background-color: #FF5733;
+}
+
+#orderupdate{
+   visibility: hidden;
+    position: absolute;
+    height: 75%;
+    width: 600px;
+    overflow: scroll;
+    background-color: #D4E297; 
+}
     
 #about {
     visibility: hidden;
@@ -32,8 +50,9 @@ h2 {
     height: 75%;
     width: 600px;
     overflow: scroll;
-    background-color: #99FFFF;
+    background-color: #E297DE;
     }
+    
     
 table, th, td {
     background-color: white;

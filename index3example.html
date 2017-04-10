@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Module 3 Assignment</title>
+ <link rel="stylesheet" type="text/css" href="styles/assignment3.css" />
+ <script src="js/assignment3.js"></script>
+</head>
+<body>
+    
+    <section id="title">
+       
+    <h1>Module 3 Assignment</h1>
+    <hr>
+       <select onchange="MenuChoice(value)" id="menu">
+       <option value="None">Please select an option.</option>
+       <option value="storelist">List Stores</option>
+       <option value="orderhistory">Store Order History</option>
+       <option value="update">Update Store Data</option>
+       </select>
+    </section>
+    <hr>
+    
+    <section id="storelist">
+        <h2>Store List</h2>
+        <hr>
+        <p id="liststores">Store List</p>
+    </section>
+    
+    <section id="orderhistory">
+        <h2>Store Order History</h2>
+        <p id="books">Order History</p>
+    </section>
+    
+    <section id="storeupdate">
+        <h3>Store Information</h3>
+        <hr>
+            <label>Store ID: </label>
+            <input type="text" id="storeID" disabled="true">
+            <br>
+            
+            <label>Store Name: </label>
+            <input type="text" id="storename">
+            <br>
+            
+            <label>Store City: </label>
+            <input type="text" id="storecity">
+            <br>
+            
+        <button onclick="StoreUpdate()">Update Store Information</button>
+    </section>
+</body>
+</html>
