@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+    
+    <html>
+        <head>
+            <title>Module 3 Assignment</title>
+            
+            <link rel="stylesheet" type="text/css" href="styles/assignment4.css" />
+            <script src="js/assignment4.js">
+                
+            </script>
+        </head>
+        
+        <body onload=RefreshMenu()>
+            <section id="title">
+                <h1>Module 3 Assignment</h1>
+            <hr>
+            <select onchange="MenuChoice(value)" id="menu">
+                <option value="None">Please select an option.</option>
+                <option value="customerlist">List of Customers</option>
+                <option value="orderhistory">Customer Order History</option>
+                <option value="currentorders">Current Orders</option>
+                <option value="orderupdate">Update Orders</option>
+                <option value="about">About</option>
+            </select>
+            </section>
+            <hr>
+            
+            <section id="customerlist">
+                <h2>Customer List</h2>
+                <hr>
+                <p id="listcustomers">Customer List</p>
+            </section>
+            
+            <section id="orderhistory">
+                <h2>Customer Order History</h2>
+                <hr>
+                <p id="customerorders"><label>Enter the Customer ID:</label>
+                <input type="text" id="customerid"></p>
+                <br>
+                <button onclick="GetOrders()" id="orders">Find Customer Orders</button>
+                <button onclick='MenuChoice("customerlist")'>Back to Customer List</button>
+            </section>
+            
+            <section id="currentorders">
+                <h2>Customer's Current Orders</h2>
+                <hr>
+                <p id="listcurrentorders"><label>Enter the Customer ID:</label>
+                <input type="text" id="customerid2"></p>
+                <br>
+                <button onclick="GetCurrentOrders()" id="orders2">Find Customer Orders</button>
+                <button onclick='MenuChoice("customerlist")'>Back to Customer List</button>
+            </section>
+            
+            <section id="orderupdate">
+                <h2>Order Information</h2>
+                <hr>
+                <label>Order ID: </label>
+                <input type="text" id="orderID" disabled="true">
+                <br>
+                
+                <label>Ship Address: </label>
+                <input type="text" id="shipaddress">
+                <br>
+                
+                <label>Ship City: </label>
+                <input type="text" id="shipcity">
+                <br>
+                
+                <label>Ship Name: </label>
+                <input type="text" id="shipname">
+                <br>
+                
+                <label>Ship Post Code: </label>
+                <input type="text" id="shippostcode">
+                <br>
+                <button onclick="UpdateOrder()" id="updateorder">Update Order</button>
+                <button onclick='MenuChoice("customerlist")'>Back to Customer List</button>
+                
+              </section>
+            
+            <section id="about">
+                <h2>About</h2>
+                <br>
+                <center><p> 
+                   This app allows you to view items a customers has purchased. Simply select a Customer Name from the Customer List or enter their ID in the input field and their order history will display in the following screen.<br>
+                   Created by: Akilah Fincher</p></center>
+            </section>
+            
+        </body>
+    </html>

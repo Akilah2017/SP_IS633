@@ -248,8 +248,9 @@ var xmlhttp = new XMLHttpRequest();
 xmlhttp.onreadystatechange = function() {
 if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
 var result = JSON.parse(xmlhttp.responseText);
-console.log(result);
-OperationResult(result); //Calls the funciton that displays the result in an alert message
+var outcome = result.WasSuccessful
+var error = result.Exception;
+OperationResult(outcome, error); //Calls the funciton that displays the result in an alert message
 MenuChoice("customerlist"); //Calls the menu choice function to display the store list
 }
 }
