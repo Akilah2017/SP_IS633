@@ -61,7 +61,7 @@ function ListCustomers() //This sends a request to the GetAllStores service and 
 
     function GenerateOutput(result) //This function receives the data form the service and creates a table to display it
     {
-        var display = "<table><tr><th></th><th>Customer Name</th><th>Customer ID</th><th>City</th></tr>"; //Table Headings
+        var display = "<table><tr><th></th><th>Customer ID</th><th>Customer Name</th><th>City</th></tr>"; //Table Headings
         var count = 0; //Count variable to loop
         var customerid = ""; //Variable to store the Store ID
         var customername = ""; //Variable to store the Store Name

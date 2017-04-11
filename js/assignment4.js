@@ -10,6 +10,7 @@ function MenuChoice(selection)
     document.getElementById("orderhistory").style.visibility = "hidden";
     document.getElementById("currentorders").style.visibility = "hidden";
     document.getElementById("orderupdate").style.visibility = "hidden";
+    document.getElementById("createcustomer").style.visibility = "hidden";
     document.getElementById("about").style.visibility = "hidden";
     switch (selection)
     {
@@ -30,6 +31,11 @@ function MenuChoice(selection)
         case "orderupdate":
             document.getElementById("orderupdate").style.visibility = "visible";
             break;
+        
+        case "createcustomer":
+            document.getElementById("createcustomer").style.visibility = "visible";
+            break;
+        
         
         case "about":
             document.getElementById("about").style.visibility = "visible";
@@ -61,7 +67,7 @@ function ListCustomers() //This sends a request to the GetAllStores service and 
 
     function GenerateOutput(result) //This function receives the data form the service and creates a table to display it
     {
-        var display = "<table><tr><th></th><th>Customer Name</th><th>Customer ID</th><th>City</th></tr>"; //Table Headings
+        var display = "<table><tr><th></th><th>Customer ID</th><th>Customer Name</th><th>City</th><th>Delete</th></tr>"; //Table Headings
         var count = 0; //Count variable to loop
         var customerid = ""; //Variable to store the Store ID
         var customername = ""; //Variable to store the Store Name
@@ -74,7 +80,7 @@ function ListCustomers() //This sends a request to the GetAllStores service and 
         customername += result.GetAllCustomersResult[count].CompanyName; //supply name of store
         customername += '</a>';
         customercity = result.GetAllCustomersResult[count].City; //Assigns the Store City to a variable
-        display += '<tr><td><button onclick="OrderList(' + "'" + customerid + "')" + '">Display Orders</button></td><td>' + customerid + "</td><td>" + customername + "</td><td>" + customercity + "</td></tr>"; //Creates a table row
+        display += '<tr><td><button onclick="OrderList(' + "'" + customerid + "')" + '">Display Orders</button></td><td>' + customerid + "</td><td>" + customername + "</td><td>" + customercity + '</td><td><button onclick="DeleteCustomer(' + "'" + customerid + "')" + '">Delete Customer</button></td></tr>'; //Creates a table row
     }
     display += "</table>";//Closes the table HTML after table rows are added
     document.getElementById("listcustomers").innerHTML = display; //Displays the table in the HTML page        }
@@ -212,9 +218,8 @@ function GetCurrentOrders(customerid) //Retrieves a list of books ordered by a p
         shipcity = result.GetOrdersForCustomerResult[count].ShipCity;
         shipname = result.GetOrdersForCustomerResult[count].ShipName;
         shippostcode = result.GetOrdersForCustomerResult[count].ShipPostcode;
-            
         display += '<tr><td><button onclick="OrderInfo(' + "'" + orderid + "')" + '">Update Order Info</button></td><td>' + orderid + "</td><td>" + shipaddress + "</td><td>" + shipcity + "</td><td>" + shipname + "</td><td>" + shippostcode + "</td></tr>";
-        }
+    }
         display += "</table>";
         document.getElementById("listcurrentorders").innerHTML = display;
         MenuChoice("currentorders");
@@ -240,7 +245,7 @@ MenuChoice("orderupdate")
 xmlhttp.open("GET", url, true);
 xmlhttp.send();
 }
-//xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
 //This function executes an update operation on the Store Name and Store City
 function UpdateOrder()
 {
@@ -248,9 +253,8 @@ var xmlhttp = new XMLHttpRequest();
 xmlhttp.onreadystatechange = function() {
 if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
 var result = JSON.parse(xmlhttp.responseText);
-var outcome = result.WasSuccessful
-var error = result.Exception;
-OperationResult(outcome, error); //Calls the funciton that displays the result in an alert message
+console.log(result);
+OperationResult(result); //Calls the funciton that displays the result in an alert message
 MenuChoice("customerlist"); //Calls the menu choice function to display the store list
 }
 }
@@ -278,16 +282,76 @@ switch (success)
 case 1:
 alert("The operation was successful");
 break;
+
 case 0:
-alert("The operation was not successful:\ "+ exception);
+alert("The operation was not successful:" + exception);
 break;
+
 case -2:
 alert("The operation was not successful because the data string supplied could not be deserialized into the service object.");
 break;
+
 case -3:
 alert("The operation was not successful because a record with the supplied Order ID could not be found");
 break;
+
 default:
 alert("The operation code returned is not identifiable.");
 }
+}
+
+function CreateCustomer()
+{
+    var objRequest = new XMLHttpRequest ();
+    var url = "https://student.business.uab.edu/jsonwebservice/service1.svc/CreateCustomer";
+    
+    var customerid = document.getElementById("customeridinput").value;
+    var customername = document.getElementById("customernameinput").value;
+    var customercity = document.getElementById("customercityinput").value;
+    
+    var newcustomer = '{"CustomerID":"' + customerid + '", "CompanyName":"' + customername + '", "City":"' + customercity + '"}'
+    
+    objRequest.onreadystatechange = function() {
+    if (objRequest.readyState == 4 && objRequest.status == 200) {
+    var result = JSON.parse(objRequest.responseText);
+    var outcome = result.WasSuccessful;
+    var error = result.Exception;
+OperationResult(outcome, error) //Calls the funciton that displays the result in an alert message
+    MenuChoice("customerlist"); //Calls the menu choice function to display the store list
+}
+}
+    objRequest.open("POST", url, true);
+    objRequest.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    objRequest.send(newcustomer);
+}
+
+function DeleteCustomer(customerid)
+{
+ var objRequest = new XMLHttpRequest();
+  var confirmdelete=confirm("Are you sure you want to delete Customer ID: "+ customerid +"?")
+ 
+
+    
+ if (confirmdelete == true)
+ {
+ 
+ var url = "https://student.business.uab.edu/jsonwebservice/service1.svc/DeleteCustomer/";
+    url += customerid;
+
+
+ objRequest.onreadystatechange = function()
+ {
+ if (objRequest.readyState == 4 && objRequest.status == 200)
+ {
+ var result = JSON.parse(objRequest.responseText);
+ var outcome = result.DeleteCustomerResult.WasSuccessful;
+var error = result.DeleteCustomerResult.Exception;
+OperationResult(outcome, error);
+ MenuChoice("customerlist");
+ }
+ } //Start AJAX request
+ objRequest.open("GET", url, true);
+ objRequest.send();
+ }
+
 }

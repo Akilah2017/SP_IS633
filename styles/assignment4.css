@@ -53,7 +53,21 @@ h2 {
     background-color: #E297DE;
     }
     
+#createcustomer{
+    visibility: hidden;
+    position: absolute;
+    height: 75%;
+    width: 600px;
+    overflow: scroll;
+    background-color: #DEB887;
+    }
     
+#example
+    {
+        color: red;
+        font-style: italic;
+    }
+
 table, th, td {
     background-color: white;
     table-layout: auto;
