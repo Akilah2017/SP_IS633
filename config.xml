@@ -18,8 +18,14 @@
     <plugin name="cordova-plugin-splashscreen" source="npm"/>
     <platform name="android">
         <splash src="splash.png"/>
+        
         <preference name="SplashScreenDelay" value="3" />
         <icon src="icon.png"/>
+        <icon src="MDPI.png" platform="android" qualifier="mdpi" />
+        <icon src="HDPI.png" platform="android" qualifier="hdpi" />
+        <icon src="XHDPI.png" platform="android" qualifier="xhdpi" />
+        <icon src="XXHDPI.png" platform="android" qualifier="xxhdpi" />
+        <icon src="XXXHDPI.png" platform="android" qualifier="xxxhdpi" />
     </platform>
     
     <plugin name="cordova-plugin-geolocation" source="npm"/>
