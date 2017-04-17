@@ -17,7 +17,7 @@
     
     <plugin name="cordova-plugin-splashscreen" source="npm"/>
     <platform name="android">
-        <splash src="splashscreen.png" density="land-hdpi"/>
+        <splash src="splash.png"/>
         <preference name="SplashScreenDelay" value="3" />
         <icon src="icon.png"/>
     </platform>
