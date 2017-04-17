@@ -7,11 +7,24 @@
         version     = "0.0.1" >
     
     <!-- versionCode is optional and Android only -->
-    <name>Assignment 4</name>
-    <description>        Module 4 Assignment    </description>
+    <name>Assignment 5</name>
+    <description>        Module 5 Assignment    </description>
     <author>        Akilah Fincher     </author>
     <preference name="phonegap-version" value="cli-6.5.0" />
+    
     <plugin name="cordova-plugin-whitelist" source="npm" />
     <access origin="*" />
+    
+    <plugin name="cordova-plugin-splashscreen" source="npm"/>
+    <platform name="android">
+        <splash src="images/splashscreen.png" density="land-hdpi"/>
+        <preference name="SplashScreenDelay" value="3" />
+        <icon src="icon.png"/>
+    </platform>
+    
+    <plugin name="cordova-plugin-geolocation" source="npm"/>
+    
+    
+    
 
 </widget>

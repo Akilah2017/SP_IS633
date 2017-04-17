@@ -1,0 +1,91 @@
+h1 {
+    font-family: cursive;
+    text-align: center;
+    }
+
+h2 {
+    font-family: sans-serif;
+    text-align:  center;
+    }
+    
+#customerlist {
+    visibility: hidden;
+    position: absolute;
+    height: 75%;
+    width: 600px;
+    overflow: scroll;
+    background-color: #CCFFFF;
+    }
+    
+#orderhistory {
+    visibility: hidden;
+    position: absolute;
+    height: 75%;
+    width: 600px;
+    overflow: scroll;
+    background-color: #6F749A;
+    }
+    
+#currentorders{
+    visibility: hidden;
+    position: absolute;
+    height: 75%;
+    width: 600px;
+    overflow: scroll;
+    background-color: #FF5733;
+}
+
+#orderupdate{
+   visibility: hidden;
+    position: absolute;
+    height: 75%;
+    width: 600px;
+    overflow: scroll;
+    background-color: #D4E297; 
+}
+    
+#about {
+    visibility: hidden;
+    position: absolute;
+    height: 75%;
+    width: 600px;
+    overflow: scroll;
+    background-color: #E297DE;
+    }
+    
+#createcustomer{
+    visibility: hidden;
+    position: absolute;
+    height: 75%;
+    width: 600px;
+    overflow: scroll;
+    background-color: #DEB887;
+    }
+    
+#example
+    {
+        color: red;
+        font-style: italic;
+    }
+
+#geolocation
+    {
+    visibility: hidden;
+    position: absolute;
+    height: 75%;
+    width: 600px;
+    overflow: scroll;
+    background-color: #DAA520;
+    }
+
+table, th, td {
+    background-color: white;
+    table-layout: auto;
+    padding: 5px;
+    text-align: center;
+    }
+    
+#maploc {
+    height:80%;
+    width:80%;
+}
