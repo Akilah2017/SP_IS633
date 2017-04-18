@@ -379,8 +379,33 @@ function showPosition(position) //Function receives the geolocation data and dis
 {
     var latitude = position.coords.latitude; //Retrieves latitude data
     var longitude = position.coords.longitude; //Retrieves longitude data
+    var latlong=  new google.maps.LatLng (latitude, longitude);
     document.getElementById("latitude").innerHTML = latitude;
     document.getElementById("longitude").innerHTML = longitude;
     
-}    
+    showMap(latlong);
+    
+}   
+  
+function showMap(latlong) {
+    
+    var map = new google.maps.Map(document.getElementById('map'), {
+        center: latlong,
+        zoom: 18,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+        });
+    var marker = new google.maps.Marker({
+          position: latlong,
+          map: map
+    });
 
+    
+}
+   
+function initMap() {
+        var uab = {lat: 33.502, lng:  -86.806};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 8,
+          center: uab
+        });
+      }

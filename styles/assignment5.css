@@ -85,7 +85,8 @@ table, th, td {
     text-align: center;
     }
     
-#maploc {
-    height:80%;
-    width:80%;
+#map {
+    height:300px;
+    width:300px;
+    margin:5px;
 }
