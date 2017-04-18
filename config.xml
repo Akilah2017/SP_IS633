@@ -18,10 +18,24 @@
     <plugin name="cordova-plugin-splashscreen" source="npm"/>
     <splash src="splash.png" platform="android"/>
         <preference name="SplashScreen" value="screen"/>
-        <preference name="SplashScreenDelay" value="3" />
+        <preference name="SplashScreenDelay" value="3000" />
         <preference name="SplashMaintainAspectRatio" value="true"/>
-        <preference name="AutoHideSplashScreen" value="false"/>
+        <preference name="AutoHideSplashScreen" value="true"/>
         <preference name="SplashShowOnlyFirstTime" value="false"/>
+        
+        <icon src="icon.png" platform="android" />
+        <icon src="LDPI.png" platform="android" qualifier="ldpi" />
+        <icon src="MDPI.png" platform="android" qualifier="mdpi" />
+        <icon src="HDPI.png" platform="android" qualifier="hdpi" />
+        <icon src="XHDPI.png" platform="android" qualifier="xhdpi" />
+        <icon src="XXHDPI.png" platform="android" qualifier="xxhdpi" />
+        <icon src="XXXHDPI.png" platform="android" qualifier="xxxhdpi" />
+        
+        <splash src="sldpi.png" platform="android" qualifier="ldpi" />
+        <splash src="smdpi.png" platform="android" qualifier="mdpi" />   
+        <splash src="shdpi.png" platform="android" qualifier="hdpi" />
+        <splash src="sxhdpi.png" platform="android" qualifier="xhdpi" />
+        <splash src="sportrait-xxhdpi.png" platform="android" qualifier="port-xxhdpi" />
         
         <!--iPhone 6 / 6+ -->
         <icon src="icon-60@3x.png" platform="ios" width="180" height="180" />
@@ -44,20 +58,6 @@
         <icon src="icon-40.png" platform="ios" width="40" height="40" />
         <icon src="icon-40@2x.png" platform="ios" width="80" height="80" />
         <icon src="icon-40@3x.png" platform="ios" width="120" height="120" />
-        
-        
-        <icon src="icon.png" platform="android" />
-        <icon src="LDPI.png" platform="android" qualifier="ldpi" />
-        <icon src="MDPI.png" platform="android" qualifier="mdpi" />
-        <icon src="HDPI.png" platform="android" qualifier="hdpi" />
-        <icon src="XHDPI.png" platform="android" qualifier="xhdpi" />
-        <icon src="XXHDPI.png" platform="android" qualifier="xxhdpi" />
-        <icon src="XXXHDPI.png" platform="android" qualifier="xxxhdpi" />
-        <splash src="sldpi.png" platform="android" qualifier="ldpi" />
-        <splash src="smdpi.png" platform="android" qualifier="mdpi" />   
-        <splash src="shdpi.png" platform="android" qualifier="hdpi" />
-        <splash src="sxhdpi.png" platform="android" qualifier="xhdpi" />
-        <splash src="sportrait-xxhdpi.png" platform="android" qualifier="port-xxhdpi" />      
         
     <plugin name="cordova-plugin-geolocation" source="npm"/>
 
