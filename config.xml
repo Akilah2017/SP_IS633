@@ -7,8 +7,8 @@
         version     = "0.0.1" >
     
     <!-- versionCode is optional and Android only -->
-    <name>Assignment 5</name>
-    <description>        Module 5 Assignment    </description>
+    <name>Assignment 6</name>
+    <description>        Module 6 Assignment    </description>
     <author>        Akilah Fincher     </author>
     <preference name="phonegap-version" value="cli-6.5.0" />
     
@@ -60,5 +60,11 @@
         <icon src="icon-40@3x.png" platform="ios" width="120" height="120" />
         
     <plugin name="cordova-plugin-geolocation" source="npm"/>
+    
+    
+    <plugin name="cordova-plugin-camera" source="npm"/>
+    
+    <plugin name="cordova-plugin-contacts" source="npm"/>
+    
 
 </widget>

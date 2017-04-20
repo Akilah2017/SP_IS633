@@ -2,16 +2,29 @@
     
     <html>
         <head>
-            <title>Module 5 Assignment</title>
+            <title>Module 6 Assignment</title>
             
-            <link rel="stylesheet" type="text/css" href="styles/assignment5.css" />
-            <script src="js/assignment5.js"></script>
+            <link rel="stylesheet" type="text/css" href="styles/assignment6.css" />
+            <script src="js/assignment6.js"></script>
+            <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+            <script>
+                var objContact;
+                var picturesource;
+                var destinationtype;
+                document.addEventListener("deviceready",onDeviceReady,false);
+                function onDeviceReady()
+                {
+                picturesource = navigator.camera.PictureSourceType;
+                destinationtype = navigator.camera.DestinationType;
+                objContact = navigator.contacts.create();
+                }
+            </script>
             
         </head>
         
         <body onload=RefreshMenu()>
             <section id="title">
-                <h1>Module 5 Assignment</h1>
+                <h1>Module 6 Assignment</h1>
             <hr>
             <select onchange="MenuChoice(value)" id="menu">
                 <option value="None">Please select an option.</option>
@@ -21,6 +34,8 @@
                 <option value="orderupdate">Update Orders</option>
                 <option value="createcustomer">Create Customer</option>
                 <option value="geolocation">Geolocation</option>
+                <option value="camera">Take a Picture</option>
+                <option value="contacts">Access Contacts</option>
                 <option value="about">About</option>
             </select>
             </section>
@@ -120,6 +135,25 @@
                                
             </section>
             
+            <section id="picture">
+                <h2>Take a Picture</h2>
+                <hr>
+                <button onclick="CapturePhoto()">Take Picture</button>
+                 <br>
+            <img id="snapshot" src="" />
+             <br>
+             <br>
+            </section>
+            
+            <section id="contacts">
+                <h2>Access Contacts</h2>
+                <hr>
+                <button onclick="PickContact()">Pick A Contact</button>
+                <br>
+                <br>
+                <label>Contact Name: </label>
+               <label id="contactname"></label>
+            </section>
             
             <section id="about">
                 <h2>About</h2>

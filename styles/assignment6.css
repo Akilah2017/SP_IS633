@@ -1,0 +1,121 @@
+h1 {
+    font-family: cursive;
+    text-align: center;
+    }
+
+h2 {
+    font-family: sans-serif;
+    text-align:  center;
+    }
+    
+#customerlist {
+    visibility: hidden;
+    position: absolute;
+    height: 75%;
+    width: 600px;
+    overflow: scroll;
+    background-color: #CCFFFF;
+    }
+    
+#orderhistory {
+    visibility: hidden;
+    position: absolute;
+    height: 75%;
+    width: 600px;
+    overflow: scroll;
+    background-color: #6F749A;
+    }
+    
+#currentorders{
+    visibility: hidden;
+    position: absolute;
+    height: 75%;
+    width: 600px;
+    overflow: scroll;
+    background-color: #FF5733;
+}
+
+#orderupdate{
+   visibility: hidden;
+    position: absolute;
+    height: 75%;
+    width: 600px;
+    overflow: scroll;
+    background-color: #D4E297; 
+}
+    
+#about {
+    visibility: hidden;
+    position: absolute;
+    height: 75%;
+    width: 600px;
+    overflow: scroll;
+    background-color: #E297DE;
+    }
+    
+#createcustomer{
+    visibility: hidden;
+    position: absolute;
+    height: 75%;
+    width: 600px;
+    overflow: scroll;
+    background-color: #DEB887;
+    }
+    
+#example
+    {
+        color: red;
+        font-style: italic;
+    }
+
+#geolocation
+    {
+    visibility: hidden;
+    position: absolute;
+    height: 75%;
+    width: 600px;
+    overflow: scroll;
+    background-color: #DAA520;
+    }
+
+table, th, td {
+    background-color: white;
+    table-layout: auto;
+    padding: 5px;
+    text-align: center;
+    }
+    
+#map {
+    height:300px;
+    width:300px;
+    margin:5px;
+}
+
+#picture
+{
+    visibility: hidden;
+    position: absolute;
+    height: 75%;
+    width: 600px;
+    overflow: scroll;
+    background-color: #e6f2ff;
+}
+    
+#contacts
+{
+    visibility: hidden;
+    position: absolute;
+    height: 75%;
+    width: 600px;
+    overflow: scroll;
+    background-color: #cc99ff;
+}
+
+
+img
+{
+    float: left;
+    height: auto;
+    width: auto;
+    box-shadow: 10px 10px 5px 5px;
+}
