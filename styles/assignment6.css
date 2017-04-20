@@ -115,7 +115,8 @@ table, th, td {
 img
 {
     float: left;
-    height: 300px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
     width: 300px;
-    box-shadow: 10px 10px 5px 5px;
 }
