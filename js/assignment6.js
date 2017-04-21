@@ -492,12 +492,12 @@ function findContacts() {
    options.filter = document.getElementById("lastname").value;
    options.multiple = true;
 
-   fields = ["displayName"];
+   fields = ["givenName"];
    navigator.contacts.find(fields, contactfindSuccess, contactfindError, options);
     
    function contactfindSuccess(contacts) {
       for (var count = 0; count < contacts.length; count++) {
-         alert("Display Name = " + contacts[count].displayName);
+         alert("Last Name = " + contacts[count].displayName);
       }
    }
 	
