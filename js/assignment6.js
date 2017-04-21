@@ -456,7 +456,7 @@ function PickContact()
     navigator.contacts.pickContact(function(contact) //Function that operates when a contact is successfully returned
          {
             var contactinfo = "";
-            contactinfo += contact.name.displayName + "<br>";
+            contactinfo += contact.name.givenName + " " + contact.name.familyName + "<br>";
             var count = 0;
            
             if (contact.phoneNumbers !== null) //Checks for the presence of phone numbers
@@ -489,17 +489,18 @@ function PickContact()
 ///////////////////////////////////////////////////
 function findContacts() {
    var options = new ContactFindOptions();
-   options.filter = " " + document.getElementById("lastname").value + " ";
+   options.filter = document.getElementById("lastname").value;
    options.multiple = true;
    var contactinfo = "";
-    contactinfo += contact.name.displayName + "<br>";
+   contactinfo += contact.name.givenName + " " + contact.name.familyName + "<br>";
+   var count = 0;
 
-   fields = ["displayName"];
+   fields = ["familyName"];
    navigator.contacts.find(fields, contactfindSuccess, contactfindError, options);
     
    function contactfindSuccess(contacts) {
-      for (var count = 0; count < contacts.length; count++) {
-         contactinfo += contact.name.displayName + "<br>";
+      for (count = 0; count < contacts.length; count++) {
+         contactinfo += contact.name.givenName + " " + contact.name.familyName + "<br>";
       }
    }
 	document.getElementById("contactname").innerHTML = contactinfo;
