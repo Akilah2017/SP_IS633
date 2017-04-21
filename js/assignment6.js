@@ -453,7 +453,7 @@ function PickContact()
  //selection, and the data is returned. The second parameter is optional, and is called if no contact is returned.
  //The contact information is returned as a JSON object, with arrays for certain items like phone numbers.
 
-    navigator.contacts.pickContact(function(contact) //Function that operates when a contact is successfully returned
+     navigator.contacts.pickContact(function(contact) //Function that operates when a contact is successfully returned
          {
             var contactinfo = "";
             contactinfo += contact.name.givenName + " " + contact.name.familyName + "<br>";
@@ -486,20 +486,19 @@ function PickContact()
 }
 
 
+
 ///////////////////////////////////////////////////
 function findContacts() {
    var options = new ContactFindOptions();
    options.filter = document.getElementById("lastname").value;
    options.multiple = true;
-   var contactinfo = "";
-   var count = 0;
 
    fields = ["displayName"];
    navigator.contacts.find(fields, contactfindSuccess, contactfindError, options);
     
    function contactfindSuccess(contacts) {
-      for ( count = 0; count < contacts.length; count++) {
-         contactinfo +="Display Name = " + contacts[count].displayName;
+      for (var count = 0; count < contacts.length; count++) {
+         alert("Display Name = " + contacts[count].displayName);
       }
    }
 	
