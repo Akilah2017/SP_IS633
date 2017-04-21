@@ -487,7 +487,7 @@ function PickContact()
 
 
 ///////////////////////////////////////////////////
-function findContacts() {
+function FindContact() {
    var options = new ContactFindOptions();
    options.filter = "";
    options.multiple = true;
