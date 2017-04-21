@@ -499,8 +499,8 @@ function findContacts() {
    navigator.contacts.find(fields, contactfindSuccess, contactfindError, options);
     
    function contactfindSuccess(contacts) {
-      for (count = 0; count < contacts.name.length; count++) {
-         contactinfo += contacts.name[count].givenName + " " + contact.name[count].familyName + "<br>";
+      for (count = 0; count < contacts.length; count++) {
+         contactinfo += contacts[count].givenName + " " + contact[count].familyName + "<br>";
       }
    }
 	document.getElementById("contactname").innerHTML = contactinfo;
