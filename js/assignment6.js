@@ -499,7 +499,7 @@ function findContacts() {
     
    function contactfindSuccess(contacts) {
       for (var count = 0; count < contacts.length; count++) {
-         alert("Display Name = " + contacts[count].displayName);
+         console.log(  contacts[count].displayName);
       }
    }
 	
