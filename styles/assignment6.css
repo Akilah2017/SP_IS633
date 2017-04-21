@@ -68,6 +68,12 @@ h2 {
         font-style: italic;
     }
 
+#example2
+    {
+        color: yellow;
+        font-style: italic;
+    }
+
 #geolocation
     {
     visibility: hidden;

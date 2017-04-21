@@ -489,15 +489,15 @@ function PickContact()
 ///////////////////////////////////////////////////
 function findContacts() {
    var options = new ContactFindOptions();
-   options.filter = "";
+   options.filter = document.getElementById("lastname").value;
    options.multiple = true;
 
    fields = ["displayName"];
    navigator.contacts.find(fields, contactfindSuccess, contactfindError, options);
     
    function contactfindSuccess(contacts) {
-      for (var i = 0; i < contacts.length; i++) {
-         alert("Display Name = " + contacts[i].displayName);
+      for (var count = 0; count < contacts.length; count++) {
+         alert("Display Name = " + contacts[count].displayName);
       }
    }
 	
