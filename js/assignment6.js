@@ -487,17 +487,17 @@ function PickContact()
 
 
 ///////////////////////////////////////////////////
-function FindContact() {
+function findContacts() {
    var options = new ContactFindOptions();
-   options.filter = document.getElementById("lastname");
+   options.filter = "";
    options.multiple = true;
 
-   fields = contact.name.familyName;
+   fields = ["displayName"];
    navigator.contacts.find(fields, contactfindSuccess, contactfindError, options);
     
    function contactfindSuccess(contacts) {
       for (var i = 0; i < contacts.length; i++) {
-         alert("Last Name = " + contacts[i].familyName);
+         alert("Display Name = " + contacts[i].displayName);
       }
    }
 	
