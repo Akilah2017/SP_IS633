@@ -463,8 +463,7 @@ function PickContact()
             {
                      for (count=0; count < contact.phoneNumbers.length; count++) //Retrieves all the phone numbers
                      {
-                        contactinfo += contact.phoneNumbers[count].type + ": " +
-                        contact.phoneNumbers[count].value + "<br>";
+                        contactinfo += contact.phoneNumbers[count].type + ": " + contact.phoneNumbers[count].value + "<br>";
                      }
             }
             
@@ -484,4 +483,26 @@ function PickContact()
          }
             
             );
+}
+
+
+///////////////////////////////////////////////////
+function findContacts() {
+   var options = new ContactFindOptions();
+   options.filter = "";
+   options.multiple = true;
+
+   fields = ["familyName"];
+   navigator.contacts.find(fields, contactfindSuccess, contactfindError, options);
+    
+   function contactfindSuccess(contacts) {
+      for (var i = 0; i < contacts.length; i++) {
+         alert("Last Name = " + contacts[i].familyName);
+      }
+   }
+	
+   function contactfindError(message) {
+      alert('Failed because: ' + message);
+   }
+	
 }
