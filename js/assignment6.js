@@ -498,12 +498,11 @@ function findContacts() {
    
     
    function contactfindSuccess(contacts) {
-    var contactinfo = "";
       for (var count = 0; count < contacts.length; count++) {
-         contactinfo += contacts[count].displayName + "<br>";
+         alert("Display Name = " + contacts[count].displayName);
       }
    }
-	document.getElementById("contactname").innerHTML = contactinfo;
+	
    function contactfindError(message) {
       alert('Failed because: ' + message);
    }
