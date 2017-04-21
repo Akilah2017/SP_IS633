@@ -503,7 +503,7 @@ function findContacts() {
          contactinfo += contacts[count].displayName + "<br>";
       }
    }
-	
+	document.getElementById("contactname").innerHTML = contactinfo;
    function contactfindError(message) {
       alert('Failed because: ' + message);
    }
