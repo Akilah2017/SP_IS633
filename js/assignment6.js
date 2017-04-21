@@ -489,10 +489,10 @@ function PickContact()
 ///////////////////////////////////////////////////
 function FindContact() {
    var options = new ContactFindOptions();
-   options.filter = "";
+   options.filter = document.getElementById("lastname");
    options.multiple = true;
 
-   fields = ["contactname"];
+   fields = contact.name.familyName;
    navigator.contacts.find(fields, contactfindSuccess, contactfindError, options);
     
    function contactfindSuccess(contacts) {
