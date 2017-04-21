@@ -489,7 +489,7 @@ function PickContact()
 ///////////////////////////////////////////////////
 function findContacts() {
    var options = new ContactFindOptions();
-   options.filter = document.getElementById("lastname").value;
+   options.filter = " " + document.getElementById("lastname").value + " ";
    options.multiple = true;
 
    fields = ["displayName"];
