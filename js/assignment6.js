@@ -495,10 +495,12 @@ function findContacts() {
 
    fields = ["displayName"];
    navigator.contacts.find(fields, contactfindSuccess, contactfindError, options);
+   
     
    function contactfindSuccess(contacts) {
+    var contactinfo = "";
       for (var count = 0; count < contacts.length; count++) {
-         alert("Display Name = " + contacts[count].displayName);
+         contactinfo += contacts[count].displayName + "<br>";
       }
    }
 	
