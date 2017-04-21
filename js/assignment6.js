@@ -492,18 +492,17 @@ function findContacts() {
    options.filter = document.getElementById("lastname").value;
    options.multiple = true;
    var contactinfo = "";
-   contactinfo += contact.name.givenName + " " + contact.name.familyName + "<br>";
    var count = 0;
 
-   fields = ["familyName"];
+   fields = ["displayName"];
    navigator.contacts.find(fields, contactfindSuccess, contactfindError, options);
     
    function contactfindSuccess(contacts) {
-      for (count = 0; count < contacts.length; count++) {
-         contactinfo += contacts[count].givenName + " " + contact[count].familyName + "<br>";
+      for ( count = 0; count < contacts.length; count++) {
+         contactinfo +="Display Name = " + contacts[count].displayName;
       }
    }
-	document.getElementById("contactname").innerHTML = contactinfo;
+	
    function contactfindError(message) {
       alert('Failed because: ' + message);
    }
