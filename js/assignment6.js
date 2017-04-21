@@ -492,7 +492,7 @@ function FindContact() {
    options.filter = "";
    options.multiple = true;
 
-   fields = ["familyName"];
+   fields = ["contactname"];
    navigator.contacts.find(fields, contactfindSuccess, contactfindError, options);
     
    function contactfindSuccess(contacts) {
