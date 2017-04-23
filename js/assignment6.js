@@ -493,18 +493,18 @@ function findContacts() {
    options.filter = document.getElementById("lastname").value;
    options.multiple = true;
 
-   fields = ["givenName"];
+   fields = ["displayName"];
    navigator.contacts.find(fields, contactfindSuccess, contactfindError, options);
    
     
    function contactfindSuccess(contacts) {
      var contactnames = "";
     
-    if (contacts.givenName !== null) 
+    if (contacts.displayName !== null) 
     {
             for (var count = 0; count < contacts.length; count++)
             {
-         contactnames += "-" + contacts[count].givenName + "<br>";
+         contactnames += "-" + contacts[count].displayName + "<br>";
             }
     }
    
