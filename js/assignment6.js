@@ -500,12 +500,13 @@ function findContacts() {
    function contactfindSuccess(contacts) {
      var contactnames = "";
     
-     if (contact.displayName !== null) 
+    if (contacts.displayName !== null) 
+    {
+            for (var count = 0; count < contacts.length; count++)
             {
-      for (var count = 0; count < contacts.length; count++) {
          contactnames += "Display Name = " + contacts[count].displayName + "<br>";
-      }
-   }
+            }
+    }
    
 	document.getElementById("searchname").innerHTML = contactnames;
    }
