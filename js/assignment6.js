@@ -498,16 +498,17 @@ function findContacts() {
    
     
    function contactfindSuccess(contacts) {
-     var contactinfo = "";
+     var contactnames = "";
     
      if (contact.displayName !== null) 
             {
       for (var count = 0; count < contacts.length; count++) {
-         contactinfo += "Display Name = " + contacts[count].displayName + "<br>";
+         contactnames += "Display Name = " + contacts[count].displayName + "<br>";
       }
    }
+   
+	document.getElementById("searchname").innerHTML = contactnames;
    }
-	document.getElementById("contactname").innerHTML = contactinfo;
    function contactfindError(message) {
       alert('Failed because: ' + message);
    }
