@@ -7,8 +7,8 @@
         version     = "0.0.1" >
     
     <!-- versionCode is optional and Android only -->
-    <name>Assignment 6</name>
-    <description>        Module 6 Assignment    </description>
+    <name>Assignment 7</name>
+    <description>        Module 7 Assignment    </description>
     <author>        Akilah Fincher     </author>
     <preference name="phonegap-version" value="cli-6.5.0" />
     
