@@ -68,7 +68,8 @@
     
     <plugin name="cordova-plugin-battery-status" source="npm"/>
     
+    <plugin name="cordova-plugin-network-information" source="npm"/>
     
-    
+
 
 </widget>

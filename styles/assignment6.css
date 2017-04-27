@@ -93,7 +93,16 @@ h2 {
     overflow: scroll;
     background-color: #a6c5dd;
     }
-
+    
+#networkinfo{
+    visibility: hidden;
+    position: absolute;
+    height: 75%;
+    width: 600px;
+    overflow: scroll;
+    background-color: #d2ecce;
+    }
+}
 table, th, td {
     background-color: white;
     table-layout: auto;

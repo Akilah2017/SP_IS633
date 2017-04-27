@@ -14,7 +14,8 @@ function MenuChoice(selection)
     document.getElementById("geolocation").style.visibility = "hidden";
     document.getElementById("picture").style.visibility = "hidden";
     document.getElementById("contacts").style.visibility = "hidden";
-   document.getElementById("batterystatus").style.visibility = "hidden";
+    document.getElementById("batterystatus").style.visibility = "hidden";
+    document.getElementById("networkinfo").style.visibility = "hidden";
     document.getElementById("about").style.visibility = "hidden";
     
     switch (selection)
@@ -55,6 +56,10 @@ function MenuChoice(selection)
         
         case "battery":
             document.getElementById("batterystatus").style.visibility = "visible";
+            break;
+        
+        case "networkinfo":
+            document.getElementById("networkinfo").style.visibility = "visible";
             break;
         
         case "about":
@@ -527,4 +532,22 @@ function findContacts() {
 function onBatteryStatus(info) {
     window.addEventListener("batterystatus", onBatteryStatus, false);
    document.getElementById("percentage").innerHTML ="Battery  Level: " + info.level + "%";
+}
+
+
+
+function checkConnection() {
+    var networkState = navigator.connection.type;
+ 
+    var states = {};
+    states[Connection.UNKNOWN]  = 'Unknown connection';
+    states[Connection.ETHERNET] = 'Ethernet connection';
+    states[Connection.WIFI]     = 'WiFi connection';
+    states[Connection.CELL_2G]  = 'Cell 2G connection';
+    states[Connection.CELL_3G]  = 'Cell 3G connection';
+    states[Connection.CELL_4G]  = 'Cell 4G connection';
+    states[Connection.CELL]     = 'Cell generic connection';
+    states[Connection.NONE]     = 'No network connection';
+ 
+    alert('Connection type: ' + states[networkState]);
 }

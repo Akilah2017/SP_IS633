@@ -11,6 +11,7 @@
                 var picturesource;
                 var destinationtype;
                 var objContact;
+                var objConnection;
                 
                 document.addEventListener("deviceready",onDeviceReady,false);
                 function onDeviceReady()
@@ -18,7 +19,7 @@
                 picturesource = navigator.camera.PictureSourceType;
                 destinationtype = navigator.camera.DestinationType;
                 objContact = navigator.contacts.create();
-                
+                objConnection = navigator.connection.type();
                 }
                 
             </script>
@@ -43,7 +44,9 @@
                 <option value="geolocation">Geolocation</option>
                 <option value="camera">Take a Picture</option>
                 <option value="contacts">Access Contacts</option>
-                <option value="battery">Battery Status</option>
+                <option value="battery">Battery Level</option>
+                <option value="networkinfo">Network Information</option>
+                
                 <option value="about">About</option>
             </select>
             </section>
@@ -173,11 +176,19 @@
             </section>
                 
             <section id="batterystatus">
-                <h2>Battery Status</h2>
+                <h2>Battery Level</h2>
                 <hr>
                 <br>
-                <button onclick="onBatteryStatus()">Current Status</button>
+                <button onclick="onBatteryStatus()">Current Level</button>
                 <br><br><label id="percentage"></label>
+            </section>
+            
+            <section id="networkinfo">
+                <h2>Network Information</h2>
+                <hr>
+                <br>
+                <button onclick="checkConnection()">Check Network</button>
+                <br><br><label id="network"></label>
             </section>
             
             
