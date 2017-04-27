@@ -18,12 +18,14 @@
                 picturesource = navigator.camera.PictureSourceType;
                 destinationtype = navigator.camera.DestinationType;
                 objContact = navigator.contacts.create();
+                window.addEventListener("batterystatus", onBatteryStatus, false);
                 }
                 
             </script>
-            <script>
-                window.addEventListener("batterystatus", onBatteryStatus, false);
-            </script>
+            
+               
+               
+        
             
         </head>
         
