@@ -525,5 +525,6 @@ function findContacts() {
 //////////////////////////////////////////////////////////
 
 function onBatteryStatus(info) {
+    window.addEventListener("batterystatus", onBatteryStatus, false);
    alert("BATTERY STATUS:  Level: " + info.level + " is Plugged in: " + info.isPlugged);
 }
