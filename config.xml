@@ -66,5 +66,9 @@
     
     <plugin name="cordova-plugin-contacts" source="npm"/>
     
+    <plugin name="cordova-plugin-battery-status" source="npm"/>
+    
+    
+    
 
 </widget>

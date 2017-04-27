@@ -14,7 +14,9 @@ function MenuChoice(selection)
     document.getElementById("geolocation").style.visibility = "hidden";
     document.getElementById("picture").style.visibility = "hidden";
     document.getElementById("contacts").style.visibility = "hidden";
+   document.getElementById("batterystatus").style.visibility = "hidden";
     document.getElementById("about").style.visibility = "hidden";
+    
     switch (selection)
     {
         case "customerlist":
@@ -49,6 +51,10 @@ function MenuChoice(selection)
 
         case "contacts":
             document.getElementById("contacts").style.visibility = "visible";
+            break;
+        
+        case "battery":
+            document.getElementById("batterystatus").style.visibility = "visible";
             break;
         
         case "about":
@@ -514,4 +520,10 @@ function findContacts() {
       alert('Failed because: ' + message);
    }
 	
+}
+
+//////////////////////////////////////////////////////////
+
+function onBatteryStatus(info) {
+   alert("BATTERY STATUS:  Level: " + info.level + " is Plugged in: " + info.isPlugged);
 }

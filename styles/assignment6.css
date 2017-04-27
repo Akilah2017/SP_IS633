@@ -84,6 +84,16 @@ h2 {
     background-color: #DAA520;
     }
 
+#batterystatus
+{
+    visibility: hidden;
+    position: absolute;
+    height: 75%;
+    width: 600px;
+    overflow: scroll;
+    background-color: #a6c5dd;
+    }
+
 table, th, td {
     background-color: white;
     table-layout: auto;
